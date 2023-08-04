@@ -1,5 +1,10 @@
 import {createGlobalStyle} from 'styled-components'
 
+export const colors = {
+  mainBlue: '#012545',
+  white: '#fff'
+}
+
 export const breakpoints = {
   desktop: '1024px',
   tablet: '768px',

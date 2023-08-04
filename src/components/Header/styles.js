@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { breakpoints } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const HeaderContent = styled.div`
  position: fixed;
   top: ${props => props.isScrolled ? '0' : '32px'};
   width: 100%;
-  background-color: ${props => props.isScrolled ? '#012545' : 'transparent'};
+  background-color: ${props => props.isScrolled ? `${colors.mainBlue}` : 'transparent'};
   height: 80px;
   z-index: 2;
   transition: top 0.3s ease-out, background-color 0.3s ease-out;
@@ -35,7 +35,7 @@ export const Hamburguer = styled.div`
     display: block;
     width: 100%;
     margin-bottom: 4px;
-    background-color: ${props => props.isScrolled ? '#fff' : '#012545'};
+    background-color: ${props => props.isScrolled ? `${colors.white}` : `${colors.mainBlue}`};
   }
 
   @media (min-width: ${breakpoints.mobile}) {
@@ -87,13 +87,13 @@ export const LinksItemsNav = styled.li`
 `
 
 export const LinkNav = styled(Link)`
-  color: ${props => props.isScrolled ? '#fff' : '#012545'};
+  color: ${props => props.isScrolled ? `${colors.white}` : `${colors.mainBlue}`};
 `
 
 export const LinksItemsFav = styled.li`
   height: 25px;
   width: 25px;
-  color: ${props => props.isScrolled ? '#fff' : '#012545'};
+  color: ${props => props.isScrolled ? `${colors.white}` : `${colors.mainBlue}`};
 `
 
 

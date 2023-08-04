@@ -1,11 +1,11 @@
 import styled from 'styled-components'
-import { breakpoints } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const TopMessage = styled.div`
   width: 100%;
   max-width: 100%;
   height: 40px;
-  background-color: #012545;
+  background-color: ${colors.mainBlue};
 
   @media (max-width: 450px) {
       height: 30px;
@@ -17,7 +17,7 @@ export const ContainerParagraph = styled.div`
   justify-content: center;
   padding-top: 12px;
   >p{
-    color: #fff;
+    color: ${colors.white};
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
 
