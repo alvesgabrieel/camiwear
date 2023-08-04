@@ -1,24 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-
-export const TopMessage = styled.div`
-  width: 100%;
-  max-width: 100%;
-  height: 40px;
-  background-color: #012545;
-`
-
-export const ContainerParagraph = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-top: 12px;
-  >p{
-    color: #fff;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-  }
-`
+import { breakpoints } from '../../styles'
 
 export const HeaderContent = styled.div`
  position: fixed;
@@ -28,6 +10,11 @@ export const HeaderContent = styled.div`
   height: 80px;
   z-index: 2;
   transition: top 0.3s ease-out, background-color 0.3s ease-out;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    height: 50px;
+    padding: 8px;
+  }
 `
 
 export const Header = styled.header`
@@ -35,7 +22,33 @@ export const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 25px;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    padding: 5px;
+  }
 `
+
+export const Hamburguer = styled.div`
+  width: 32px;
+  span{
+    height: 2px;
+    display: block;
+    width: 100%;
+    margin-bottom: 4px;
+    background-color: ${props => props.isScrolled ? '#fff' : '#012545'};
+  }
+
+  @media (min-width: ${breakpoints.mobile}) {
+    display: none;
+  }
+`
+
+export const LogoContainer = styled.div`
+  @media (max-width: ${breakpoints.mobile}) {
+    margin-left: 24px;
+  }
+`
+
 export const logo = styled.a`
   width: 164px;
   max-width: 100%;
@@ -43,16 +56,30 @@ export const logo = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: ${breakpoints.mobile}) {
+      width: 100px;
+    }
+
   >img{
     width: 100%;
     max-width: 100%;
     height: 100%;
   }
 `
+export const Nav = styled.nav`
+  @media (max-width: ${breakpoints.mobile}) {
+      display: none;
+  }
+`
 
 export const Links = styled.ul`
   display: flex;
   gap: 40px;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    gap: 7px;
+  }
 `
 
 export const LinksItemsNav = styled.li`
@@ -68,15 +95,5 @@ export const LinksItemsFav = styled.li`
   width: 25px;
   color: ${props => props.isScrolled ? '#fff' : '#012545'};
 `
-
-export const DivBanner = styled.div`
-`
-
-export const Banner = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`
-
 
 

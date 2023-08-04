@@ -1,21 +1,12 @@
 import {useState, useEffect} from 'react'
 import { AiOutlineHeart, AiOutlineInstagram } from 'react-icons/ai'
-import { Swiper, SwiperSlide } from 'swiper/react'
 
 import * as S from './styles'
 
 import logoAzul from '../../assets/logo-transp-azul.png'
 import logoBranco from '../../assets/logo-transp-branco.png'
-import banner from '../../assets/banner.png'
-import banner2 from '../../assets/banner2.jpg'
 
-const BannerImages = [
-  { id: 1, image: `${banner}` },
-  { id: 2, image: `${banner2}` },
-  { id: 3, image: `${banner}` }
-]
-
-const InitialScreen = () => {
+const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -43,19 +34,19 @@ const InitialScreen = () => {
 
   return (
     <>
-      <S.TopMessage>
-        <S.ContainerParagraph>
-          <p>Free Ground Shipping - All items on sale cannot be returned or exchanged.</p>
-        </S.ContainerParagraph>
-      </S.TopMessage>
       <S.HeaderContent isScrolled={isScrolled}>
         <S.Header>
-          <div>
+          <S.Hamburguer isScrolled={isScrolled}>
+            <span />
+            <span />
+            <span />
+          </S.Hamburguer>
+          <S.LogoContainer>
             <S.logo href="#">
               {Logo()}
             </S.logo>
-          </div>
-          <nav>
+          </S.LogoContainer>
+          <S.Nav>
             <S.Links>
               <S.LinksItemsNav>
                 <S.LinkNav to="/novidades" isScrolled={isScrolled}>Novidades</S.LinkNav>
@@ -67,7 +58,7 @@ const InitialScreen = () => {
                 <S.LinkNav to="/biquinis" isScrolled={isScrolled}>Biquinis</S.LinkNav>
               </S.LinksItemsNav>
             </S.Links>
-          </nav>
+          </S.Nav>
           <S.Links>
             <S.LinksItemsFav isScrolled={isScrolled}><AiOutlineHeart size={22}/></S.LinksItemsFav>
             <S.LinksItemsFav isScrolled={isScrolled}>
@@ -78,18 +69,8 @@ const InitialScreen = () => {
           </S.Links>
         </S.Header>
       </S.HeaderContent>
-      <S.DivBanner>
-        <Swiper>
-          {BannerImages.map((item) => (
-            <SwiperSlide key={item.id}>
-              <S.Banner src={item.image} alt="banner da loja" />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-      </S.DivBanner>
     </>
   )
 }
 
-export default InitialScreen
+export default Header
