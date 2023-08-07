@@ -6,7 +6,7 @@ import * as S from './styles'
 import logoAzul from '../../assets/logo-transp-azul.png'
 import logoBranco from '../../assets/logo-transp-branco.png'
 
-const Header = () => {
+const Header = ({ toggleAside }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const Header = () => {
     <>
       <S.HeaderContent isScrolled={isScrolled}>
         <S.Header>
-          <S.Hamburguer isScrolled={isScrolled}>
+          <S.Hamburguer isScrolled={isScrolled} onClick={toggleAside}>
             <span />
             <span />
             <span />

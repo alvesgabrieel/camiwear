@@ -22,6 +22,7 @@ const BannerImagesMobile = [
 
 const Home = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const [aside, setAside] = useState(false)
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth)
@@ -29,14 +30,29 @@ const Home = () => {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  const toggleAside = () => {
+    setAside(!aside)
+    console.log('fui clicado')
+  }
+
   return (
     <>
+    {aside && <S.Overlay onClick={toggleAside}/>}
+    <S.MenuContainer className={aside ? 'open' : ''}>
+      <S.Aside>
+        <S.Items>
+          <S.Item>Novidades</S.Item>
+          <S.Item>Roupas</S.Item>
+          <S.Item>Biquinis</S.Item>
+        </S.Items>
+      </S.Aside>
+    </S.MenuContainer>
     <S.TopMessage>
         <S.ContainerParagraph>
-          <p>Free Ground Shipping - All items on sale cannot be returned or exchanged.</p>
+          <p>Frete grátis acima de R$600,00* | 10% OFF para primeira compra com o cupom WELCOME</p>
         </S.ContainerParagraph>
       </S.TopMessage>
-      <Header />
+      <Header toggleAside={toggleAside}/>
       <div>
       <Swiper>
           {(windowWidth <= 450 ? BannerImagesMobile : BannerImages).map((item) => (
