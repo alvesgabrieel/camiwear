@@ -1,18 +1,18 @@
-import {createGlobalStyle} from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export const colors = {
-  mainBlue: '#012545',
-  white: '#fff',
-  grey: '#938c8c4a',
-  backgroundColor: '#fffeea',
-  lightgrey: '#737277'
-}
+  mainBlue: "#012545",
+  white: "#fff",
+  grey: "#938c8c4a",
+  backgroundColor: "#ffeed0",
+  lightgrey: "#737277",
+};
 
 export const breakpoints = {
-  desktop: '1024px',
-  tablet: '768px',
-  mobile: '450px'
-}
+  desktop: "1024px",
+  tablet: "768px",
+  mobile: "450px",
+};
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -41,5 +41,5 @@ const GlobalStyle = createGlobalStyle`
       max-width: 80%
     }
 }
-`
-export default GlobalStyle
+`;
+export default GlobalStyle;
