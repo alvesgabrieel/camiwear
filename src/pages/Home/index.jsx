@@ -6,14 +6,14 @@ import { LiaShippingFastSolid, LiaWhatsapp } from "react-icons/lia";
 
 import * as S from "./styles";
 
+import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
 //imgs
 import product from "../../assets/product.png";
-import cami1 from "../../assets/cami1.jpg";
+import cami1 from "../../assets/may1.jpg";
 import cami2 from "../../assets/cami2.jpg";
-import cami3 from "../../assets/cami3.jpg";
-import Header from "../../components/Header";
+import cami3 from "../../assets/may2.jpg";
 
 import banner from "../../assets/banner.png";
 import banner2 from "../../assets/banner2.jpg";

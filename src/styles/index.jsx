@@ -4,7 +4,7 @@ export const colors = {
   mainBlue: "#012545",
   white: "#fff",
   grey: "#938c8c4a",
-  backgroundColor: "#ffeed0",
+  backgroundColor: "#fff5e4",
   lightgrey: "#737277",
 };
 
@@ -25,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
 
   body{
     background-color: ${colors.backgroundColor};
+    overflow-x: hidden;
   }
 
   a {

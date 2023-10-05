@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import React from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Novidades from "./pages/Novidades";
@@ -11,6 +12,12 @@ import Maios from "./pages/Maios";
 import ConjuntoMay from "./pages/Produtos/ConjuntoMay";
 
 const Rotas = () => {
+  const location = useLocation();
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />
